@@ -2,7 +2,7 @@ from importlib import reload
 from utils import util
 from PyQt5 import QtWidgets, QtCore, QtGui
 import os
-from apps import assets, shots, sequences, projects, settings, engines, published, templates
+from apps import assets, shots, sequences, projects, settings, engines, published, templates, animation
 
 reload(util)
 reload(assets)
@@ -13,6 +13,7 @@ reload(settings)
 reload(engines)
 reload(published)
 reload(templates)
+reload(animation)
 
 
 class AppCore(QtWidgets.QMainWindow):
@@ -50,6 +51,7 @@ class AppCore(QtWidgets.QMainWindow):
         self.app_engines = engines.AppEngines(self)
         self.app_published = published.AppPublished(self)
         self.app_templates = templates.AppTemplates(self)
+        self.app_animation = animation.AppAnimation(self)
 
     def reload(self):
         self.parent.populate()

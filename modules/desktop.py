@@ -64,13 +64,16 @@ class AppDesktop(QtWidgets.QMainWindow):
         self.ui.action_templates.triggered.connect(self.main_core.app_templates.open)
         self.ui.action_settings.triggered.connect(lambda x: self.main_core.app_settings.open(self))
         self.ui.action_engines.triggered.connect(lambda x: self.main_core.app_engines.open(self))
+        self.ui.action_animation.triggered.connect(lambda x: self.main_core.app_animation.open(self))
         self.ui.action_mindblown.triggered.connect(self.open_site)
 
         self.populate()
         self.ui.action_assets.setVisible(False)
         self.ui.action_shots.setVisible(False)
+        self.ui.action_animation.setVisible(False)
         self.ui.action_sequences.setVisible(False)
         self.ui.action_published.setVisible(False)
+        self.ui.action_templates.setVisible(True)
         self.ui.action_templates.setVisible(True)
 
         self.show()
@@ -82,6 +85,7 @@ class AppDesktop(QtWidgets.QMainWindow):
         self.ui.panels.setCurrentIndex(0)
         self.ui.action_assets.setVisible(False)
         self.ui.action_shots.setVisible(False)
+        self.ui.action_animation.setVisible(False)
 
         self.ui.action_sequences.setVisible(False)
         self.ui.action_published.setVisible(False)
@@ -146,6 +150,7 @@ class AppDesktop(QtWidgets.QMainWindow):
 
             self.ui.action_assets.setVisible(True)
             self.ui.action_shots.setVisible(True)
+            self.ui.action_animation.setVisible(True)
             self.ui.action_sequences.setVisible(True)
             self.ui.action_published.setVisible(True)
             self.ui.action_projects.setVisible(False)

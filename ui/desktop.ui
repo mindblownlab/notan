@@ -459,6 +459,8 @@
     <addaction name="separator"/>
     <addaction name="action_published"/>
     <addaction name="separator"/>
+    <addaction name="action_animation"/>
+    <addaction name="separator"/>
     <addaction name="action_engines"/>
     <addaction name="separator"/>
     <addaction name="action_settings"/>
@@ -599,6 +601,15 @@
    </property>
    <property name="text">
     <string>Templates</string>
+   </property>
+  </action>
+  <action name="action_animation">
+   <property name="icon">
+    <iconset resource="../resources/resources.qrc">
+     <normaloff>:/assets/alembic.png</normaloff>:/assets/alembic.png</iconset>
+   </property>
+   <property name="text">
+    <string>Animation Export</string>
    </property>
   </action>
  </widget>

@@ -27,6 +27,10 @@ resolutions = {
         "width": 1920,
         "height": 1080
     },
+    "HD 1500": {
+        "width": 1500,
+        "height": 1500
+    },
     "HD 720": {
         "width": 1280,
         "height": 720
@@ -36,7 +40,6 @@ resolutions = {
         "height": 540
     },
 }
-
 
 def get_root_path():
     return os.path.normpath(os.path.join(os.path.dirname(os.path.dirname(__file__))))
@@ -213,6 +216,7 @@ def load_icon(name=""):
 def get_files(project=None, context=None, path=None):
     try:
         file_path_root = os.path.join(os.path.dirname(path), "*.{}".format(project.get("engine").get("ext")))
+        # file_path_root = os.path.join(os.path.dirname(path), "*.mb")
         files = glob(file_path_root)
         files = list(filter(lambda sec: ".ini" not in sec and "edits" not in sec, files))
         files = list(map(lambda sec: os.path.normpath(sec), files))
@@ -434,3 +438,9 @@ def get_context_from_path(path):
         "info": data_info,
         "version": version
     }
+
+
+def get_params_alembic():
+    args = ["uvWrite", "stripNamespaces", "worldSpace", "writeVisibility", "writeUVSets"]
+    alembicArgs = " -".join(args)
+    return alembicArgs

@@ -36,7 +36,7 @@ engines:
   version: '2023'
   work: 9.MAYA
 folder_production: 2.PROD/3.3D
-project_root: D:/PRODUCTION/PROJECT/2022
+project_root: L:/_JOBSATIVOS
 relations:
   animation: 01_Animation
   assembly: 02_Assembly

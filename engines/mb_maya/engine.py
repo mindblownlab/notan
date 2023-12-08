@@ -8,6 +8,7 @@ from maya import cmds, mel
 from functools import partial
 import ffmpeg
 import datetime
+import time
 
 reload(workfiles)
 reload(project)
@@ -373,6 +374,14 @@ class MayaEngine(QtWidgets.QMainWindow):
         except:
             get_all_transforms = list(map(lambda asset: {"name": asset, "path": path, "root": cmds.ls(asset, long=True)[0]}, get_all_transforms))
 
+        for a in range(len(get_all_transforms)):
+            ast = get_all_transforms[a]
+            total = ast.get("name").split("_")
+            if len(total) > 2:
+                get_all_transforms[a]["name"] = "_".join(total[:-2])
+            else:
+                get_all_transforms[a]["name"] = "_".join(total[:-1])
+
         return get_all_transforms
 
     def setter_config(self, ctx=None, prj=None):
@@ -553,6 +562,52 @@ class MayaEngine(QtWidgets.QMainWindow):
                              pluginObjects=("gpuCacheDisplayFilter", True)
                              )
             cmds.modelEditor(viewport, e=True, grid=True)
+
+    # EXPORT ANIMATION
+
+    def export_animation(self, collect=None, prj=None, ctx=None, ui=None):
+
+        try:
+            alembicArgs = util.get_params_alembic()
+            frame_start, frame_end = ctx.get("frames")
+            total = len(collect)
+            exported = 0
+
+            for n in range(len(collect)):
+                node = collect[n]
+                pct = (((exported + 1) * 100) / total)
+
+                path = os.path.join(node.get("path").format(node.get("name")))
+                path = os.path.normpath(path)
+                path = path.replace("\\", "/")
+
+                path_dir = os.path.dirname(path)
+                QtCore.QCoreApplication.processEvents()
+                ui.progressbar.setFormat("Exporting {}...".format(node.get("name")))
+                ui.progressbar.setProperty("value", pct)
+                if not os.path.exists(path_dir):
+                    os.makedirs(path_dir)
+                try:
+                    abc_export_cmd = "-frameRange {start} {end} -{args} -dataFormat ogawa -root {root} -file '{file}'".format(start=frame_start, end=frame_end, args=alembicArgs, root=node.get("root"), file=path)
+                    cmds.AbcExport(jobArg=abc_export_cmd)
+                except:
+                    pass
+                QtCore.QCoreApplication.processEvents()
+                try:
+                    icon = QtGui.QIcon()
+                    icon.addPixmap(QtGui.QPixmap(":/assets/alembic.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+                    item = ui.listing.topLevelItem(exported)
+                    item.setIcon(0, icon)
+                except:
+                    pass
+                exported = (exported + 1)
+                time.sleep(0.5)
+            QtCore.QCoreApplication.processEvents()
+            ui.progressbar.setFormat("Export caches complete!")
+            ui.progressbar.setProperty("value", 0)
+
+        except Exception as error:
+            util.message_log(error)
 
     def closeEvent(self, event):
         try:

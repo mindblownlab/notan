@@ -60,6 +60,8 @@ try:
             cmds.menuItem(label="Shot settings", image="cog.png", parent=root_menu, command=lambda x=None: app_maya.app_project.setter_config())
             cmds.menuItem(divider=True, parent=root_menu)
             cmds.menuItem(label="Playblast", image="anim_blast.png", parent=root_menu, command=lambda x=None: app_maya.app_blast.open())
+            cmds.menuItem(divider=True, parent=root_menu)
+            cmds.menuItem(label="Cache animation", parent=root_menu, image="pub_alembic.png", command=lambda x=None: app_maya.app_scene.animation())
         cmds.menuItem(label="Load File", image="load.png", parent=root_menu, command=lambda x=None: app_maya.app_loader.open())
 
     cmds.menuItem(divider=True, parent=root_menu)
