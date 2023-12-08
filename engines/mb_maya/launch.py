@@ -3,6 +3,7 @@ import sys
 from utils import util, context
 import shutil
 
+
 class Startup:
 
     def __init__(self, data=None):
@@ -12,21 +13,16 @@ class Startup:
             project = context.get_project()
             engine_root = os.path.join(root_path, "engines", "mb_maya")
             environment_path = os.path.join(os.environ['APPDATA'], settings.get("studio").get("name"))
-
-            PYTHONPATH = []
-
-            PYTHONPATH.insert(0, root_path)
-
-            lib_path = os.path.join(root_path, "env", "Lib", "site-packages-lite")
-            if lib_path not in PYTHONPATH:
-                sys.path.append(lib_path)
-                PYTHONPATH.append(lib_path)
+            PYTHONPATH = os.environ['PYTHONPATH'].split(";")
+            PYTHONPATH = list(filter(lambda r: "mb_blender" not in r, PYTHONPATH))
+            PYTHONPATH[1] = "{}-side".format(PYTHONPATH[1])
 
             if engine_root not in PYTHONPATH:
                 sys.path.append(engine_root)
                 PYTHONPATH.append(engine_root)
 
             os.environ['PYTHONPATH'] = ";".join(PYTHONPATH)
+            print(os.environ['PYTHONPATH'])
 
             module = r"""+ {studio} {version} {root}
 MAYA_PLUG_IN_PATH += {root}\plug-in

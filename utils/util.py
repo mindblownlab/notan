@@ -1,10 +1,8 @@
-import json
 import os
 import sys
 import yaml
 import math
 import os.path, time
-from unicodedata import normalize
 import logging
 from glob import glob
 from datetime import datetime
@@ -25,19 +23,20 @@ logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S
 logger = logging.getLogger(__name__)
 
 resolutions = {
-        "HD 1080": {
-            "width": 1920,
-            "height": 1080
-        },
-        "HD 720": {
-            "width": 1280,
-            "height": 720
-        },
-        "HD 540": {
-            "width": 960,
-            "height": 540
-        },
-    }
+    "HD 1080": {
+        "width": 1920,
+        "height": 1080
+    },
+    "HD 720": {
+        "width": 1280,
+        "height": 720
+    },
+    "HD 540": {
+        "width": 960,
+        "height": 540
+    },
+}
+
 
 def get_root_path():
     return os.path.normpath(os.path.join(os.path.dirname(os.path.dirname(__file__))))
@@ -121,7 +120,9 @@ def convert_size(size):
 
 
 def no_accents(value=""):
-    return normalize('NFKD', value).encode('ASCII', 'ignore').decode('ASCII')
+    # return unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode('ascii')
+    # return normalize('NFKD', value).encode('ASCII', 'ignore').decode('ASCII')
+    return value
 
 
 def get_settings():

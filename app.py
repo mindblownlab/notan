@@ -2,14 +2,17 @@ import os
 import sys
 
 root_path = os.path.dirname(os.path.abspath(__file__))
-libraries = ["", "env\Lib\site-packages"]
+python_root = os.path.join(os.path.dirname(root_path), "Python", "Lib", "site-packages")
+
 PYTHONPATH = []
 
-for lib in libraries:
-    path = os.path.normpath(os.path.join(root_path, lib))
-    if path not in sys.path:
-        sys.path.insert(0, path)
-    PYTHONPATH.append(path)
+if root_path not in sys.path:
+    sys.path.insert(0, root_path)
+PYTHONPATH.append(root_path)
+
+if python_root not in sys.path:
+    sys.path.insert(0, python_root)
+PYTHONPATH.append(python_root)
 
 os.environ['PYTHONPATH'] = ";".join(PYTHONPATH)
 

@@ -1,5 +1,4 @@
 from PySide2 import QtWidgets
-import os, json
 from utils import util
 from utils import context as ctx
 from engines.mb_maya import engine
