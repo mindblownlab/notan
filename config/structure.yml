@@ -1,0 +1,56 @@
+template:
+- _id: 8be69fa4-251a-4925-9c92-096cf405c639
+  children:
+  - _id: 3d8c5209-f09d-48bd-9c7a-9e75fa5d418c
+    children: []
+    engine: false
+    name: 1.ANIMA
+    root: false
+  - _id: 1c44614f-4157-415f-932f-b88464dbb53d
+    children: []
+    engine: false
+    name: 2.STILL
+    root: false
+  - _id: 32ebcc57-d244-4807-818a-d65a4172d12c
+    children: []
+    engine: false
+    name: 4.PREVIZ
+    root: false
+  engine: true
+  name: 5.BLENDER
+  root: true
+- _id: 69974896-cd38-461a-b236-5ce8fec6884d
+  children:
+  - _id: c0f4f2c7-ad56-4c62-ba54-791d3c1435b9
+    children: []
+    engine: false
+    name: assets
+    root: false
+  - _id: 072b7772-dbc9-4367-8744-17d5fdaabf9d
+    children: []
+    engine: false
+    name: work
+    root: false
+  - _id: f0877ea5-5e4b-4cb6-9f4d-51df1c3fec30
+    children: []
+    engine: false
+    name: cache
+    root: false
+  - _id: 05a0b3e7-7b6a-4054-a8b1-38d2e30d1685
+    children: []
+    engine: false
+    name: sourceimages
+    root: false
+  - _id: 285bec0c-32e0-415c-ba7f-f52bb06cdcd0
+    children: []
+    engine: false
+    name: movies
+    root: false
+  - _id: fd2e44a5-e641-4136-bd0e-7c7b70fc1aec
+    children: []
+    engine: false
+    name: images
+    root: false
+  engine: true
+  name: 9.MAYA
+  root: true
