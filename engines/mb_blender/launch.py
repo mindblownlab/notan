@@ -18,7 +18,6 @@ class Startup:
                 PYTHONPATH.append(engine_root)
 
             os.environ['PYTHONPATH'] = ";".join(PYTHONPATH)
-            print(os.environ['PYTHONPATH'])
 
             os.environ['BLENDER_USER_SCRIPTS'] = engine_root
             os.environ['MB_ROOT'] = root_path

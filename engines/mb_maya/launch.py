@@ -22,7 +22,6 @@ class Startup:
                 PYTHONPATH.append(engine_root)
 
             os.environ['PYTHONPATH'] = ";".join(PYTHONPATH)
-            print(os.environ['PYTHONPATH'])
 
             module = r"""+ {studio} {version} {root}
 MAYA_PLUG_IN_PATH += {root}\plug-in
