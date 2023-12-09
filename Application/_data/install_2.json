@@ -1,0 +1,113 @@
+{
+ "version": "auto-py-to-exe-configuration_v1",
+ "pyinstallerOptions": [
+  {
+   "optionDest": "noconfirm",
+   "value": true
+  },
+  {
+   "optionDest": "filenames",
+   "value": ""
+  },
+  {
+   "optionDest": "onefile",
+   "value": false
+  },
+  {
+   "optionDest": "console",
+   "value": true
+  },
+  {
+   "optionDest": "icon_file",
+   "value": "D:/DEVELOP/Studios/Notan/Blender_Pipe/icon.ico"
+  },
+  {
+   "optionDest": "name",
+   "value": "Notan"
+  },
+  {
+   "optionDest": "contents_directory",
+   "value": "."
+  },
+  {
+   "optionDest": "clean_build",
+   "value": false
+  },
+  {
+   "optionDest": "strip",
+   "value": false
+  },
+  {
+   "optionDest": "noupx",
+   "value": false
+  },
+  {
+   "optionDest": "disable_windowed_traceback",
+   "value": false
+  },
+  {
+   "optionDest": "uac_admin",
+   "value": false
+  },
+  {
+   "optionDest": "uac_uiaccess",
+   "value": false
+  },
+  {
+   "optionDest": "argv_emulation",
+   "value": false
+  },
+  {
+   "optionDest": "bootloader_ignore_signals",
+   "value": false
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/DEVELOP/Studios/Notan/Blender_Pipe/apps;apps/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/DEVELOP/Studios/Notan/Blender_Pipe/config;config/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/DEVELOP/Studios/Notan/Blender_Pipe/engines;engines/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/DEVELOP/Studios/Notan/Blender_Pipe/entity;entity/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/DEVELOP/Studios/Notan/Blender_Pipe/env;env/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/DEVELOP/Studios/Notan/Blender_Pipe/models;models/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/DEVELOP/Studios/Notan/Blender_Pipe/resources;resources/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/DEVELOP/Studios/Notan/Blender_Pipe/storage;storage/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/DEVELOP/Studios/Notan/Blender_Pipe/studio_light;studio_light/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/DEVELOP/Studios/Notan/Blender_Pipe/ui;ui/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/DEVELOP/Studios/Notan/Blender_Pipe/utils;utils/"
+  }
+ ],
+ "nonPyinstallerOptions": {
+  "increaseRecursionLimit": true,
+  "manualArguments": ""
+ }
+}
