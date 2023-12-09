@@ -14,7 +14,7 @@ maya:
   asset_alembic: cache/alembic/assets/{asset_type}/{asset}/{name}.v001.abc
   asset_publish: assets/{asset_type}/{asset}/{step}/{filename}.v001.{ext}
   asset_work: work/assets/{asset_type}/{asset}/{step}/{filename}.v{version}.{ext}
-  playblast: movies/playblast/Review/{sequence}/{shot}/{filename}Blast.v{version}.avi
+  playblast: movies/playblast/Review/{sequence}/{shot}/{filename}_Animation.v{version}.avi
   root_asset_publish: assets/{asset_type}/{asset}
   root_asset_work: work/assets/{asset_type}/{asset}
   root_shot_publish: scenes/{sequence}/{shot}

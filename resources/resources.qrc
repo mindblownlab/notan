@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="assets">
+    <file>check.png</file>
+    <file>check_color.png</file>
     <file>empty_engine.png</file>
     <file>arrow_opened.png</file>
     <file>extensions/abc.ico</file>
