@@ -41,6 +41,7 @@ resolutions = {
     },
 }
 
+
 def get_root_path():
     return os.path.normpath(os.path.join(os.path.dirname(os.path.dirname(__file__))))
 
@@ -209,8 +210,8 @@ def load_icon_ext(name="", ext="ico"):
     return os.path.join(get_root_path(), "resources", "{}.{}".format(name, ext))
 
 
-def load_icon(name=""):
-    return os.path.join(get_root_path(), "resources", "{}.png".format(name))
+def load_icon(name="", ext="png"):
+    return os.path.join(get_root_path(), "resources", "{}.{}".format(name, ext))
 
 
 def get_files(project=None, context=None, path=None):

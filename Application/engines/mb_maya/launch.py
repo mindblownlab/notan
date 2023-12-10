@@ -27,6 +27,7 @@ class Startup:
 MAYA_PLUG_IN_PATH += {root}\plug-in
 MAYA_SHELF_PATH += {root}\shelves
 MAYA_SCRIPT_PATH += {root}\scripts
+XBMLANGPATH += {root}\icons
 """.format(root=engine_root, studio=settings.get("studio").get("name"), version=settings.get("developer").get("version"))
 
             modules_path = os.path.join(environment_path, str(data.get("version")), 'modules', '{}.mod'.format(settings.get("studio").get("name")))

@@ -186,7 +186,7 @@
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="../resources/resources.qrc">
+              <iconset>
                <normaloff>:/assets/back.png</normaloff>:/assets/back.png</iconset>
              </property>
              <property name="iconSize">
@@ -578,7 +578,7 @@
   </action>
   <action name="action_engines">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/assets/images/anim_cog.png</normaloff>:/assets/images/anim_cog.png</iconset>
    </property>
    <property name="text">
@@ -587,7 +587,7 @@
   </action>
   <action name="action_published">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/assets/images/publish.png</normaloff>:/assets/images/publish.png</iconset>
    </property>
    <property name="text">
@@ -596,7 +596,7 @@
   </action>
   <action name="action_templates">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/assets/images/pub_file.png</normaloff>:/assets/images/pub_file.png</iconset>
    </property>
    <property name="text">
@@ -605,7 +605,7 @@
   </action>
   <action name="action_animation">
    <property name="icon">
-    <iconset resource="../resources/resources.qrc">
+    <iconset>
      <normaloff>:/assets/alembic.png</normaloff>:/assets/alembic.png</iconset>
    </property>
    <property name="text">

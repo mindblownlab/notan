@@ -92,6 +92,3 @@ class AppTemplates:
             self.parent.ui.project_label.setText('<html><head/><body><p align="right"><span style=" font-size:9pt; font-weight:600;">| {project}</span><span style=" font-size:9pt;"><br/>{info}</span></p></body></html>'.format(project="Configuring templates", info="Manage template"))
         except Exception as error:
             util.message_log(error)
-
-
-from utils import resources

@@ -74,6 +74,3 @@ class AppCore(QtWidgets.QMainWindow):
                         widget.deleteLater()
         except Exception as error:
             util.message_log(error)
-
-
-from utils import resources

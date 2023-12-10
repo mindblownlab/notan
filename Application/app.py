@@ -19,12 +19,15 @@ os.environ['PYTHONPATH'] = ";".join(PYTHONPATH)
 from importlib import reload
 from PyQt5 import QtWidgets
 from utils import util
-from modules import desktop
+from modules import desktop, splash
 
 reload(util)
 reload(desktop)
+reload(splash)
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     mb_main = desktop.AppDesktop()
+    mb_splash = splash.AppSplash(mb_main)
+
     app.exec_()

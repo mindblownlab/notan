@@ -36,7 +36,7 @@ class AppDesktop(QtWidgets.QMainWindow):
 
         self.setWindowTitle(self.settings.get("studio").get("name"))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/assets/icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(util.load_icon(name="logo", ext="ico")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.setWindowIcon(icon)
 
         self.ui = util.load_ui(target=self)
@@ -76,7 +76,7 @@ class AppDesktop(QtWidgets.QMainWindow):
         self.ui.action_templates.setVisible(True)
         self.ui.action_templates.setVisible(True)
 
-        self.show()
+        self.btn_back.setIcon(QtGui.QIcon(util.load_icon(name="arrow_left")))
 
     def open_site(self):
         webbrowser.open('https://mindblownlab.studio')
@@ -122,6 +122,8 @@ class AppDesktop(QtWidgets.QMainWindow):
         pixmap = QtGui.QPixmap(data.get("thumb"))
         ui_item.thumb.setPixmap(pixmap)
 
+        ui_item.proj_open.setIcon(QtGui.QIcon(util.load_icon(name="arrow_open")))
+
         root_menu.setData(0, QtCore.Qt.UserRole, {**data})
         self.ui.projects.setItemWidget(root_menu, 0, ui_item)
         ui_item.proj_open.clicked.connect(lambda evt: self.open_project(data))
@@ -141,6 +143,8 @@ class AppDesktop(QtWidgets.QMainWindow):
         icon_path = os.path.join(util.get_root_path(), "storage", "engines", "{}.png".format(data.get("type")))
         pixmap = QtGui.QPixmap(icon_path)
         ui_item.thumb.setPixmap(pixmap)
+
+        ui_item.eng_open.setIcon(QtGui.QIcon(util.load_icon(name="arrow_open")))
 
         self.ui.engines.setItemWidget(root_menu, 0, main_item)
         ui_item.eng_open.clicked.connect(lambda evt: self.open_engine(data))
@@ -215,6 +219,3 @@ class AppDesktop(QtWidgets.QMainWindow):
             self.main_core.close()
         except Exception as error:
             util.message_log(error)
-
-
-from utils import resources

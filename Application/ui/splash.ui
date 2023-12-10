@@ -32,10 +32,10 @@
    <string>Splash</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../resources/resources.qrc">
+   <iconset>
     <normaloff>:/assets/icon.ico</normaloff>:/assets/icon.ico</iconset>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="image">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -51,7 +51,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resources/resources.qrc">:/assets/images/splash.png</pixmap>
+    <pixmap>:/assets/images/splash.png</pixmap>
    </property>
   </widget>
   <widget class="QProgressBar" name="progress_bar">
